@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahadev Jewellers - Custom Indian Gold Jewellery | Jodhpur</title>
+  <meta name="description" content="Mahadev Jewellers - Jodhpur's trusted custom Indian jewellery store. Handcrafted gold, kundan & bridal jewellery. Visit B-77 Kamla Nehru Nagar, Chopasani Road." />
+  <meta name="author" content="Mahadev Jewellers" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mahadev Jewellers - Custom Indian Gold Jewellery | Jodhpur" />
+  <meta property="og:description" content="Mahadev Jewellers - Jodhpur's trusted custom Indian jewellery store. Handcrafted gold, kundan & bridal jewellery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: hsl(30, 10%, 6%);
+      --fg: hsl(40, 30%, 90%);
+      --card: hsl(30, 10%, 10%);
+      --primary: hsl(40, 70%, 50%);
+      --primary-fg: hsl(30, 10%, 6%);
+      --muted: hsl(30, 10%, 15%);
+      --muted-fg: hsl(40, 15%, 55%);
+      --gold-dark: hsl(40, 80%, 35%);
+      --gold: hsl(40, 70%, 50%);
+      --gold-light: hsl(40, 60%, 65%);
+      --border-gold: hsla(40, 70%, 50%, 0.2);
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Cormorant Garamond', serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .text-gold-gradient {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .bg-gold-gradient {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+    }
+
+    .divider-ornament {
+      display: flex; align-items: center; gap: 1rem; max-width: 200px; margin: 0 auto;
+    }
+    .divider-ornament::before, .divider-ornament::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, hsla(40,70%,50%,0.4), transparent);
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: hsla(30, 10%, 6%, 0.9); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .navbar .container {
+      display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem;
+    }
+    .navbar-brand { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { font-size: 1.1rem; color: hsla(40,30%,90%,0.7); transition: color 0.3s; }
+    .nav-links a:hover { color: var(--primary); }
+    .btn-call {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 1.25rem; border-radius: 0.25rem; font-weight: 600; font-size: 1.1rem;
+      color: var(--primary-fg); transition: opacity 0.3s;
+    }
+    .btn-call:hover { opacity: 0.9; }
+    .mobile-toggle { display: none; background: none; border: none; color: var(--primary); cursor: pointer; }
+    .mobile-menu { display: none; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+    }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay1 {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, hsla(30,10%,6%,0.95), hsla(30,10%,6%,0.7), hsla(30,10%,6%,0.4));
+    }
+    .hero-overlay2 {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, var(--bg), transparent, hsla(30,10%,6%,0.5));
+    }
+    .hero-content {
+      position: relative; padding-top: 6rem; max-width: 640px;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem; color: var(--primary); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .hero h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
+    .hero-desc { font-size: 1.25rem; color: var(--muted-fg); max-width: 500px; margin-bottom: 2rem; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .btn-primary {
+      padding: 1rem 2rem; border-radius: 0.25rem; font-weight: 600; font-size: 1.1rem;
+      color: var(--primary-fg); transition: opacity 0.3s;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-outline {
+      padding: 1rem 2rem; border-radius: 0.25rem; font-weight: 600; font-size: 1.1rem;
+      border: 1px solid hsla(40,70%,50%,0.4); color: var(--primary); transition: background 0.3s;
+    }
+    .btn-outline:hover { background: hsla(40,70%,50%,0.1); }
+
+    /* ===== COLLECTIONS ===== */
+    .collections { padding: 6rem 0; }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-header .label { font-size: 1.1rem; color: var(--primary); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 1rem; }
+    .section-header h2 { font-size: 2.75rem; font-weight: 700; margin-bottom: 1rem; }
+    .collections-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .collection-card {
+      position: relative; overflow: hidden; border-radius: 0.25rem;
+      background: var(--card); border: 1px solid hsla(40,70%,50%,0.1); transition: border-color 0.5s;
+    }
+    .collection-card:hover { border-color: hsla(40,70%,50%,0.4); }
+    .collection-card .img-wrap { aspect-ratio: 1; overflow: hidden; }
+    .collection-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
+    .collection-card:hover img { transform: scale(1.1); }
+    .collection-card .overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, var(--bg), hsla(30,10%,6%,0.2), transparent);
+      opacity: 0.6; transition: opacity 0.3s;
+    }
+    .collection-card:hover .overlay { opacity: 0.8; }
+    .collection-card .info { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; }
+    .collection-card h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .collection-card p { font-size: 1.1rem; color: var(--muted-fg); }
+
+    /* ===== ABOUT ===== */
+    .about { padding: 6rem 0; background: hsla(30,10%,15%,0.3); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about .label { font-size: 1.1rem; color: var(--primary); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 1rem; }
+    .about h2 { font-size: 2.75rem; font-weight: 700; margin-bottom: 2rem; }
+    .about .text-block { display: flex; flex-direction: column; gap: 1.5rem; font-size: 1.1rem; color: var(--muted-fg); }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; text-align: center; }
+    .stats .number { font-family: var(--font-display); font-size: 1.875rem; font-weight: 700; color: var(--primary); }
+    .stats .stat-label { font-size: 0.875rem; color: var(--muted-fg); margin-top: 0.25rem; }
+    .about-image {
+      position: relative;
+    }
+    .about-image img {
+      width: 100%; height: 500px; object-fit: cover; border-radius: 0.25rem;
+      border: 1px solid var(--border-gold);
+    }
+    .about-image .corner-bl {
+      position: absolute; bottom: -1rem; left: -1rem; width: 6rem; height: 6rem;
+      border-left: 2px solid hsla(40,70%,50%,0.4); border-bottom: 2px solid hsla(40,70%,50%,0.4);
+      border-radius: 0 0 0 0.5rem;
+    }
+    .about-image .corner-tr {
+      position: absolute; top: -1rem; right: -1rem; width: 6rem; height: 6rem;
+      border-top: 2px solid hsla(40,70%,50%,0.4); border-right: 2px solid hsla(40,70%,50%,0.4);
+      border-radius: 0 0.5rem 0 0;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact { padding: 6rem 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1000px; margin: 0 auto; }
+    .contact-items { display: flex; flex-direction: column; gap: 2rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1.25rem; }
+    .contact-icon {
+      width: 3rem; height: 3rem; border-radius: 0.25rem; background: hsla(40,70%,50%,0.1);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .contact-icon svg { width: 1.25rem; height: 1.25rem; color: var(--primary); }
+    .contact-item h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .contact-item p, .contact-item a { font-size: 1.1rem; color: var(--muted-fg); }
+    .contact-item a:hover { color: var(--primary); }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem;
+      background: hsl(140, 50%, 30%); color: var(--fg); padding: 0.75rem 1.5rem;
+      border-radius: 0.25rem; font-weight: 600; font-size: 1.1rem; transition: background 0.3s;
+    }
+    .btn-whatsapp:hover { background: hsl(140, 50%, 35%); }
+    .contact-map {
+      border-radius: 0.25rem; overflow: hidden; border: 1px solid var(--border-gold); height: 450px;
+    }
+    .contact-map iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg) brightness(0.8); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: hsla(30,10%,15%,0.3); border-top: 1px solid hsla(40,70%,50%,0.1); padding: 3rem 0;
+    }
+    .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem; }
+    .footer h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+    .footer h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; }
+    .footer p, .footer a { font-size: 1rem; color: var(--muted-fg); }
+    .footer a:hover { color: var(--primary); }
+    .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-contact-item { display: flex; align-items: center; gap: 0.5rem; color: var(--muted-fg); }
+    .footer-contact-item svg { width: 1rem; height: 1rem; color: var(--primary); flex-shrink: 0; }
+    .footer-bottom {
+      border-top: 1px solid hsla(40,70%,50%,0.1); padding-top: 1.5rem; text-align: center;
+      font-size: 0.875rem; color: var(--muted-fg);
+    }
+
+    /* ===== SVG ICONS ===== */
+    .icon { display: inline-block; vertical-align: middle; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .mobile-menu.open {
+        display: flex; flex-direction: column; gap: 1rem;
+        padding: 1rem 1.5rem; border-top: 1px solid var(--border-gold); background: var(--bg);
+      }
+      .mobile-menu a { font-size: 1.1rem; color: hsla(40,30%,90%,0.7); }
+      .mobile-menu a:hover { color: var(--primary); }
+
+      .hero h1 { font-size: 2.5rem; }
+      .collections-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .collections-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a href="#home" class="navbar-brand text-gold-gradient">Mahadev Jewellers</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:9414301715" class="btn-call bg-gold-gradient">
+        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now
+      </a>
+    </div>
+    <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="#home" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
+    <a href="#collections" onclick="document.getElementById('mobileMenu').classList.remove('open')">Collections</a>
+    <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+    <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
+    <a href="tel:9414301715" class="btn-call bg-gold-gradient" style="justify-content:center; padding:0.75rem;">
+      <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+    <img src="images/hero-jewellery.jpg" alt="Mahadev Jewellers - Exquisite Indian Gold Jewellery" />
+    <div class="hero-overlay1"></div>
+    <div class="hero-overlay2"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-subtitle animate-fade-in-up">Since Generations</p>
+      <h1 class="animate-fade-in-up" style="animation-delay:0.2s">
+        <span class="text-gold-gradient">Timeless</span><br />
+        Indian Jewellery
+      </h1>
+      <p class="hero-desc animate-fade-in-up" style="animation-delay:0.4s">
+        Handcrafted with devotion — exquisite gold, kundan &amp; custom jewellery from the heart of Jodhpur.
+      </p>
+      <div class="hero-buttons animate-fade-in-up" style="animation-delay:0.6s">
+        <a href="#collections" class="btn-primary bg-gold-gradient">View Collections</a>
+        <a href="#contact" class="btn-outline">Visit Our Store</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section id="collections" class="collections">
+  <div class="container">
+    <div class="section-header">
+      <p class="label">Our Treasure</p>
+      <h2 class="text-gold-gradient">Collections</h2>
+      <div class="divider-ornament"><span style="color:var(--primary);font-size:1.5rem;">✦</span></div>
+    </div>
+    <div class="collections-grid">
+      <div class="collection-card">
+        <div class="img-wrap"><img src="images/collection-necklace.jpg" alt="Necklace Sets" /></div>
+        <div class="overlay"></div>
+        <div class="info"><h3>Necklace Sets</h3><p>Bridal &amp; traditional kundan necklaces</p></div>
+      </div>
+      <div class="collection-card">
+        <div class="img-wrap"><img src="images/collection-bangles.jpg" alt="Bangles" /></div>
+        <div class="overlay"></div>
+        <div class="info"><h3>Bangles</h3><p>Rajasthani meenakari &amp; gold bangles</p></div>
+      </div>
+      <div class="collection-card">
+        <div class="img-wrap"><img src="images/collection-earrings.jpg" alt="Earrings" /></div>
+        <div class="overlay"></div>
+        <div class="info"><h3>Earrings</h3><p>Jhumka, chandbali &amp; stud earrings</p></div>
+      </div>
+      <div class="collection-card">
+        <div class="img-wrap"><img src="images/collection-rings.jpg" alt="Rings" /></div>
+        <div class="overlay"></div>
+        <div class="info"><h3>Rings</h3><p>Wedding bands &amp; statement rings</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="label">Our Legacy</p>
+        <h2 class="text-gold-gradient">About Mahadev Jewellers</h2>
+        <div class="text-block">
+          <p>Nestled in the vibrant city of Jodhpur, Mahadev Jewellers has been a trusted name in custom Indian jewellery for generations. We specialize in crafting bespoke gold ornaments that blend traditional Rajasthani artistry with contemporary elegance.</p>
+          <p>Every piece at Mahadev Jewellers tells a story — of heritage, devotion, and unmatched craftsmanship. From bridal sets to everyday elegance, our master artisans pour their heart into every design.</p>
+          <p>We take pride in offering hallmarked gold jewellery with transparent pricing and a commitment to purity that has earned the trust of thousands of families across Rajasthan.</p>
+        </div>
+        <div class="stats">
+          <div><div class="number">25+</div><div class="stat-label">Years of Trust</div></div>
+          <div><div class="number">10K+</div><div class="stat-label">Happy Families</div></div>
+          <div><div class="number">100%</div><div class="stat-label">Hallmarked Gold</div></div>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="images/craftsmanship.jpg" alt="Master craftsman at Mahadev Jewellers" />
+        <div class="corner-bl"></div>
+        <div class="corner-tr"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <p class="label">Get in Touch</p>
+      <h2 class="text-gold-gradient">Visit Our Store</h2>
+      <div class="divider-ornament"><span style="color:var(--primary);font-size:1.5rem;">✦</span></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h3>Our Address</h3>
+            <p>B-77, Kamla Nehru Nagar,<br/>Chopasani Road, Jodhpur - 342003<br/>Rajasthan, India</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <h3>Phone</h3>
+            <a href="tel:9414301715" style="color:var(--primary);">+91 94143 01715</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:sunilvermaa7777@gmail.com" style="color:var(--primary);">sunilvermaa7777@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h3>Store Hours</h3>
+            <p>Mon - Sat: 10:00 AM - 8:00 PM<br/>Sunday: 11:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+        <a href="https://wa.me/919414301715?text=Hello%20Mahadev%20Jewellers%2C%20I%20am%20interested%20in%20your%20jewellery%20collection." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.5!2d72.98!3d26.28!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDE2JzQ4LjAiTiA3MsKwNTgnNDguMCJF!5e0!3m2!1sen!2sin!4v1"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Mahadev Jewellers Location - Jodhpur">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3 class="text-gold-gradient">Mahadev Jewellers</h3>
+        <p>Crafting timeless Indian jewellery with devotion and precision, from the royal city of Jodhpur.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#collections">Collections</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact Info</h4>
+        <div class="footer-contact">
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>B-77, Kamla Nehru Nagar, Jodhpur</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:9414301715">+91 94143 01715</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:sunilvermaa7777@gmail.com" style="font-size:0.875rem;">sunilvermaa7777@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Mahadev Jewellers. All rights reserved. | Jodhpur, Rajasthan</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
